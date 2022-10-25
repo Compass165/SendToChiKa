@@ -5,11 +5,11 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 public class User {
-    @NotEmpty
+    @NotEmpty(message = "{error.name.blank}")
     @Size(min = 2, max = 30)
     private String name;
 
-    @Min(value = 18, message = "{error.age.under18}")
+    @Min(value = 18, message = "error.age.under18")
     private int age;
 
     public User() {
